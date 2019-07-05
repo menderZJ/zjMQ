@@ -1,4 +1,5 @@
 # zjMQ
+<<<<<<< HEAD
 
 #### 介绍
 {**以下是码云平台说明，您可以替换此简介**
@@ -37,3 +38,6 @@
 4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
 5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+=======
+ZJMQ
+>>>>>>> c524b34224054f0a5f7585240bbcd94a72eca7da

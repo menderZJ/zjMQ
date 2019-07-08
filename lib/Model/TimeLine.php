@@ -34,7 +34,7 @@ class TimeLine extends MQList
      * @param $el
      * @return bool,成功返回true，失败返回false
      */
-    public function pushin($timeKey,$el){
+    public static function pushin($timeKey,$el){
         if(strpos(strval($timeKey),'.')<1){
             $timeKey=$timeKey.'.0000000';
         }
@@ -58,28 +58,28 @@ class TimeLine extends MQList
      * @param $key
      * @return bool
      */
-    public function getout($key){
+    public static function getout($key){
       return $this->popBykey($key);
     }
 
     /**
      * @desc 弹出并返回一个时间线上时间最迫切的任务（时间越早的，越在前执行）
      */
-    public function popout(){
+    public static function popout(){
         return $this->lpop();
     }
 
     /**
      * @return mixed
      */
-    public function maxKey(){
+    public static function maxKey(){
         return $this->keys()[$this->length()-1];
     }
 
     /**
      * @return mixed
      */
-    public function minKey(){
+    public static function minKey(){
         return $this->keys()[0];
     }
 

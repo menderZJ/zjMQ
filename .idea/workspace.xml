@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1de699c6-71d1-4a0c-bab3-fe25a9fbe996" name="Default Changelist" comment="" />
+    <list default="true" id="1de699c6-71d1-4a0c-bab3-fe25a9fbe996" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/Config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Driver/Dom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Driver/Driver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Driver/IniFile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Driver/JsonFile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Driver/MySql.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Driver/Redis.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Driver/Xml.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TimeLine.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TimeLine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,9 +26,16 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1NSMJSTGXwGOjgdwSurKKf6qxlN" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -53,11 +73,26 @@
       <workItem from="1562069973571" duration="6846000" />
       <workItem from="1562153394717" duration="10370000" />
       <workItem from="1562240400353" duration="13695000" />
-      <workItem from="1562325770726" duration="6679000" />
+      <workItem from="1562325770726" duration="7279000" />
+      <workItem from="1562510628897" duration="4753000" />
+      <workItem from="1562589199790" duration="4822000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

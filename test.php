@@ -20,15 +20,7 @@ spl_autoload_register('autoload');
 
     $tl = new Lib\Model\TimeLine();
     for($i=1;$i<=10;$i++) {
-//        $el = new Lib\Model\MQListElement();
-//        $el->setFrom('MYSelf'.$i)
-//            ->setData('d'.$i)
-//            ->setTarget('YOU!'.$i);
-//        $el='A'.$i;
-
-//        $list->rpush($el);
         $t=new DateTime();
-       // print($i."#");
         $tl->pushin($t->getTimestamp(),$i);
     }
 

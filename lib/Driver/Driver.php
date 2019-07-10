@@ -14,13 +14,14 @@
 namespace Driver;
 
 use \Config\Config;
-use \Lib\Model\TimeLine;
+use \Driver\IniFile;
+use \Driver\MySql;
+use \Driver\Dom;
+use  \Driver\JsonFile;
+use \Driver\Redis;
+
 class Driver
 {
-    /**
-     * @var 时间线
-     */
-    protected $timeLine;
     /**
      * @var 配置文件
      */
@@ -36,9 +37,10 @@ class Driver
      */
     public function __construct()
     {
-        $this->timeLine=new TimeLine();
         $this->config=Config::$base_on;
-        switch ($this->config){
+        $handle=new $this->config();
+
+ /*       switch ($this->config){
             case 'iniFile':
                 $handle=new IniFile();
                 berak;
@@ -54,7 +56,7 @@ class Driver
             case 'xml':
                 $handle=new Xml();
                 break;
-        }
+        }*/
     }
 
     /**
@@ -63,8 +65,7 @@ class Driver
      * @param object|mixed $el 压入的元素
      */
     public function pushIn($key='',$el=null){
-
-
+        return $this->handle->pushIn($key,$el);
     }
 
     /**
@@ -72,8 +73,7 @@ class Driver
      * @return array
      */
     public function popOut(){
-
-        return arrar($key=>$el);
+        return $$this->handle->popOut();
     }
 
     /**
@@ -81,8 +81,15 @@ class Driver
      * @param $key
      */
     public function popByKey($key){
+        return $$this->handle->popByKey();
+    }
 
-
+    /**
+     * @return 时间线
+     */
+    public function getList()
+    {
+        return $this->getList();
     }
 
 

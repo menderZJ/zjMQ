@@ -16,16 +16,25 @@ namespace Lib\Model;
  * @desc 时间线模型，继承于MQList。在此模型中，主要执行将来要进行的任务，如定时器，延时器任务等。
  *       当有任务超时时，将优先处理已超时的任务。
  */
+use DateTime;
 class TimeLine extends MQList
 {
 
     /**
      * TimeLine constructor.
+     * @param array $list 初始化的队列数组，最迫切到最不迫切排好序。注意，因为要重新建立键，传入的数组将丢失键信息。
      */
 
-    public function __construct()
-    {
-        parent::__construct();
+    public function __construct($list=array())
+    {   parent::__construct();
+        if(count($list)>0){
+            foreach($list as $k=>$v){
+                $t=new DateTime();
+                $this->pushin($t->getTimestamp(),$v);
+            }
+            $this->sortByKey();
+        }
+
     }
 
     /**
@@ -34,7 +43,7 @@ class TimeLine extends MQList
      * @param $el
      * @return bool,成功返回true，失败返回false
      */
-    public static function pushin($timeKey,$el){
+    public  function pushIn($timeKey,$el){
         if(strpos(strval($timeKey),'.')<1){
             $timeKey=$timeKey.'.0000000';
         }
@@ -58,32 +67,37 @@ class TimeLine extends MQList
      * @param $key
      * @return bool
      */
-    public static function getout($key){
+    public  function getOut($key){
       return $this->popBykey($key);
     }
 
     /**
      * @desc 弹出并返回一个时间线上时间最迫切的任务（时间越早的，越在前执行）
      */
-    public static function popout(){
+    public  function popOut(){
         return $this->lpop();
     }
 
     /**
      * @return mixed
      */
-    public static function maxKey(){
+    public  function maxKey(){
         return $this->keys()[$this->length()-1];
     }
 
     /**
      * @return mixed
      */
-    public static function minKey(){
+    public  function minKey(){
         return $this->keys()[0];
     }
 
-
+    /**
+     * @return array
+     */
+    public function getTimelineArr(){
+        return $this->MQList;
+    }
 
 
 }

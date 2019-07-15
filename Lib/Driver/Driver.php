@@ -11,23 +11,13 @@
 /**
  * 整合封装为统一的调用方法
  */
-namespace Driver;
+namespace Lib\Driver;
 
-use \Config\Config;
-use \Driver\IniFile;
-use \Driver\MySql;
-use \Driver\Dom;
-use  \Driver\JsonFile;
-use \Driver\Redis;
-
+use Config\Config;
+//use Lib\Driver\IniFile;
 class Driver
 {
-    /**
-     * @var 配置文件
-     */
-    protected $config;
-
-    /**
+     /**
      * @var null 操作器
      */
     protected $handle=null;
@@ -37,26 +27,29 @@ class Driver
      */
     public function __construct()
     {
-        $this->config=Config::$base_on;
-        $handle=new $this->config();
+        $driverClass=Config::$base_on;
+       // $this->handle=eval("new {$driverClass}()");
+        switch ($driverClass){
+            case 'IniFile':
+                $this->handle=new IniFile();
+                break;
+            case  'JsonFile':
+                $this->handle=new JsonFile();
+                break;
+            case  'Mysql':
+                $this->handle=new MySql();
+                break;
+            case 'Redis':
+                $this->handle=new Redis();
+                break;
+            case 'Xml':
+                $this->handle=new Xml();
+                break;
+            default:
 
- /*       switch ($this->config){
-            case 'iniFile':
-                $handle=new IniFile();
-                berak;
-            case  'jsonFile':
-                $handle=new JsonFile();
-                break;
-            case  'mysql':
-                $handle=new MySql();
-                break;
-            case 'redis':
-                 $handle=new Redis();
-                break;
-            case 'xml':
-                $handle=new Xml();
-                break;
-        }*/
+        }
+
+
     }
 
     /**
@@ -65,6 +58,9 @@ class Driver
      * @param object|mixed $el 压入的元素
      */
     public function pushIn($key='',$el=null){
+        if($key==''){
+            $key=(new \DateTime())->getTimestamp();
+        }
         return $this->handle->pushIn($key,$el);
     }
 
@@ -73,7 +69,7 @@ class Driver
      * @return array
      */
     public function popOut(){
-        return $$this->handle->popOut();
+        return $this->handle->popOut();
     }
 
     /**
@@ -81,15 +77,15 @@ class Driver
      * @param $key
      */
     public function popByKey($key){
-        return $$this->handle->popByKey();
+        return $this->handle->popByKey($key);
     }
 
     /**
-     * @return 时间线
+     * @return 列表
      */
     public function getList()
     {
-        return $this->getList();
+        return $this->handle->getList();
     }
 
 

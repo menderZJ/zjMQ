@@ -9,12 +9,12 @@
  */
 
 /**
- * Xml驱动
+ * Dom 驱动
  */
-namespace Driver;
+namespace \Lib\Driver;
 
 
-class Xml
+class Dom
 {
 
 }

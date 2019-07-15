@@ -3,18 +3,18 @@
  * Created by ZJ.Mender.yang
  * User: ZJ
  * Date: 2019-07-08
- * Time: 20:40
- *  Version:1.0
+ * Time: 20:51
+ * Version:1.0
  * License under MIT.
  */
 
 /**
- * mySql数据库存储驱动
+ * redis 驱动
  */
-namespace Driver;
+namespace Lib\Driver;
 
 
-class MySql
+class Redis
 {
 
 }

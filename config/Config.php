@@ -17,7 +17,11 @@ class  Config
      * @var string  基于何种存储结构进行调用，
      *      取值为：IniFile，JsonFile，Mysql，Redis，Xml 中一种
      */
+<<<<<<< HEAD
     public  static  $base_on='Mysql';
+=======
+    public  static  $base_on='IniFile';
+>>>>>>> 45259e75c0879d659279ad68af3342c11f69d141
 
     /**
      * @var array $iniFile 文件路径，$base_on为inifile时必需设置,可为网络路径
@@ -43,6 +47,7 @@ class  Config
         //端口
         'port'=>'3306',
         //用户名
+<<<<<<< HEAD
         'user'=>'mq',
         //密码
         'pass'=>'AaBb123456',
@@ -54,6 +59,19 @@ class  Config
         'table'=>'mq_list',
         //已处理数据表
         'outputTable'=>'processed'
+=======
+        'user'=>'root',
+        //密码
+        'pass'=>'123456789',
+        //数据库名称
+        'schema'=>'zjMQ',
+        //表前缀
+        'prefix'=>'zjmq_',
+        //待处理数据表
+        'table'=>'MQtable',
+        //已处理数据表
+        'outputTable'=>'outputTable'
+>>>>>>> 45259e75c0879d659279ad68af3342c11f69d141
     );
     /**
      * @var array $redis 服务器信息，$base_on为redis时必需设置
